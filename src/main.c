@@ -125,10 +125,8 @@ int main(int argc, char *argv[]) {
 		//if there is a transparency/alpha channel, then cycle through the entire thing and garantee that it's
 		//100% visable
 		for(size_t i = 0; i < frameSize; i += vinfo.bits_per_pixel / 8){
-			if(framePtr[i + alphaOffset / 8] != 0xff){
-				//force set the alpha channel (transparency) to max visibility
-				framePtr[i + alphaOffset / 8] = 0xff;
-			}
+			//force set the alpha channel (transparency) to max visibility
+			framePtr[i + alphaOffset / 8] = 0xff;
 		}
 
 	}
